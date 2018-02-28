@@ -259,3 +259,6 @@ defaults:
       comments: # true
       share: true
       related: true
+
+# Add minimal mistakes theme
+remote_theme: "mmistakes/minimal-mistakes"
