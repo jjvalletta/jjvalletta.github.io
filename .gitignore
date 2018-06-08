@@ -13,3 +13,4 @@ node_modules
 npm-debug.log*
 .Rhistory
 _archive/
+000-test-blog.Rmd
