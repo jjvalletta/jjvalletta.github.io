@@ -3,9 +3,9 @@
 # Date: 	02/03/2018
 # Title: 	Convert R Markdown to Markdown for use with Jekyll blog
 # Assumed folder structure:
-# _rmd: YYYY-MM-DD-my-blog.Rmd
+# _rmd: NNN-my-blog.Rmd
 # assets/img/my-blog: images associated with my-blog
-# _posts: auto-generated YY-MM-DD-my-blog.md (references figures in assets/img/my-blog)
+# _posts: auto-generated YY-MM-DD-NNN-my-blog.md (references figures in assets/img/my-blog)
 #
 # Resources:
 # http://www.jonzelner.net/jekyll/knitr/r/2014/07/02/autogen-knitr/
@@ -14,7 +14,7 @@
 # http://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/
 # http://tinyheero.github.io/2015/12/06/rmd-to-jekyll-protect-eqn.html
 #*****************************************************************************#
-knit_post <- function(fileName, baseDir="/Users/jjv/jjvalletta.github.io")
+knit_post <- function(fileName, baseDir=getwd())
 {
     # Load required libraries
     require(knitr, quietly=TRUE, warn.conflicts=FALSE)
