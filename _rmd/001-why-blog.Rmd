@@ -1,6 +1,5 @@
 ---
 title: "Why start a blog?"
-author: "John Joseph Valletta"
 excerpt: "Three reasons for starting this blog"
 date: '`r format(Sys.Date(), "%d %B %Y")`'
 tags: [blog, education]
