@@ -1,0 +1,62 @@
+---
+title: "Why start a blog?"
+author: "John Joseph Valletta"
+excerpt: "Three reasons for starting this blog"
+date: '`r format(Sys.Date(), "%d %B %Y")`'
+tags: [blog, education]
+categories: misc
+output: 
+    html_document:
+        fig_caption: yes
+        theme: flatly
+        highlight: pygments
+        smart: TRUE
+        toc: TRUE
+        toc_depth: 3
+        number_sections: TRUE
+        toc_float:
+            collapsed: TRUE
+            smooth_scroll: FALSE
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, cache=FALSE)
+```
+
+Almost, no one does anything for no reason. Here are my three reasons for starting this blog:
+
+## 1. Enhance my own understanding of a topic
+
+[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) was a theoretical physicist. 
+Apart from his (many) scientific accomplishments, he was renowned for explaining complex 
+scientific concepts in simple and easily-understood terms. His technique for learning 
+new concepts can be summarised as follows (or watch this short [video](https://www.youtube.com/watch?v=tkm0TNFzIeg))
+
+a. Choose a topic you want to learn and study it
+
+b. Write the concept down in layman's terms
+
+c. Find the gaps in your knowledge, go back to the source material and restudy it
+(repeat b. until you are happy with your understanding)
+
+d. Simplify the language used and add an analogy where possible
+
+I apply these rules whenever I'm preparing material for a workshop or seminar. 
+It is surprising (perhaps it shouldn't be anymore) how often I have to go back
+and restudy a topic which I thought I knew very well! Blogging is therefore another route
+towards improving my understanding of several topics. Explaining something to others
+require you to fully understand it yourself first!
+    
+## 2. Avoid repeating the same explanation/advice
+
+[David Robinson](http://varianceexplained.org/r/start-blog/) summarises this very well in his tweet:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">When you’ve written the same code 3 times, write a function<br><br>When you’ve given the same in-person advice 3 times, write a blog post</p>&mdash; David Robinson (@drob) <a href="https://twitter.com/drob/status/928447584712253440?ref_src=twsrc%5Etfw">November 9, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Blog posts acts as a repository of explanations/advice that can be quickly shared with many people.
+
+## 3. (Try) and give something back to the community
+
+I have used countless blogs to get me started; from using a new R package to basic DIY.
+This is my attempt and giving something back to the community. I hope that
+some of the things I will write about will be useful to some of you!
