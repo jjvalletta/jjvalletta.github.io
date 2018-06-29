@@ -1,0 +1,97 @@
+---
+title: "Laws of data analysis"
+excerpt: "Three things to keep in mind when analysing data"
+date: '`r format(Sys.Date(), "%d %B %Y")`'
+tags: [data analysis, data science]
+categories: [data science]
+output: 
+    html_document:
+        fig_caption: yes
+        theme: flatly
+        highlight: pygments
+        smart: TRUE
+        toc: TRUE
+        toc_depth: 3
+        number_sections: TRUE
+        toc_float:
+            collapsed: TRUE
+            smooth_scroll: FALSE
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, cache=FALSE)
+```
+
+All scientific disciplines involve analysing **data** (observational/experimental/simulated).
+The **interpretation** of the data and/or accompanying model constitutes a critical step towards knowledge discovery.
+The analysis can enhance the evidence towards a particular hypothesis (or not), which can have important downstream effects in terms of
+future research efforts and informing public policies.
+
+Performing **reproducible** and **transparent** data analysis is therefore a dire necessity. 
+I will discuss these topics in more detail in a separate blog.
+Here, I will present my three favourite "laws" of data analysis. I have these 
+pinned against the noticeboard in my office. I look at them before starting 
+analysing data. I did not come up with these "laws" myself and will therefore cite
+them appropriately.
+
+## 1. Shite in, shite out - *Anonymous*
+
+Such a simple "law", yet it covers myriad of scenarios! In its simplest form, this "law" 
+means knowing the data **inside out**. One needs to appreciate all the limitations of the
+experimental design/data collection process, including sampling biases and measurement noise.
+More importantly, one needs to ascertain that the data set is indeed suitable to 
+answer their research question.
+
+One has to avoid [weighing-a-feather-while-the-kangaroo-is-jumping-on-the-scales-scenario!](http://andrewgelman.com/2015/04/21/feather-bathroom-scale-kangaroo/) Unfortunately, these scenarios creep into scientific research unnoticeably
+more often than one appreciates, typically due to a failure in acknowledging the different 
+sources of biases/uncertainty in the data. This is partly due to the way statistics is taught, where
+the focus is on the statistical test/model that one should use rather than on the suitability of a
+data set to answer a specific question. 
+
+Moreover, several statistical methods tend to be "marketed" 
+as being robust and able to adjust for a host of factors. Although this is theoretically true, in practice
+due to the limited number of noisy observations and the relative high dimensionality of the problem, this is either not 
+achievable or achieved but with important caveats attached to it. 
+For example, between-person studies can be particularly noisy, because it is 
+hard to find "true" controls. Coupling that with small number of individuals and
+a small "true" effect size, one ends up with the serious problem of finding a "significant" result, but where
+the effect size is overestimated and possibly in the wrong direction (read [this](http://www.stat.columbia.edu/~gelman/research/published/retropower_final.pdf) for details).
+
+In a nutshell, no matter how sophisticated your statistical model is, if your data is overwhelmingly noisy
+and/or biased (shite in), your interpretation of the test/model will be misleading (shite out).
+
+## 2. If you torture the data long enough it will confess to anything - [*Ronald Coase*](https://en.wikipedia.org/wiki/Ronald_Coase) (1910 - 2013)
+
+Or rephrased as [*lies, damned lies, and statistics*](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics).
+Scientific papers are all about a coherent story with a happy ending (e.g we looked at the impact of X on Y
+and found a significant association). What happens when a result is not "found"? Luckily for humanity, 
+research institutions do not employ the same people that produce infographics for [Fox News](https://www.mediamatters.org/research/2012/10/01/a-history-of-dishonest-fox-charts/190225). 
+
+![fox_chart]({{ site.baseurl }}{% link assets/img/fox_chart.jpg %})
+
+Nevertheless, researchers are typically tempted by performing subgroup analysis and/or look for
+other relationships (not originally intended to be answered by the data) and/or try 
+several other methods. Although none of these constitute a problem *per se* (if performed systematically
+rather than as a fishing exercise), the issue is that generally a paper only focuses on
+a handful of "significant" results, biasing the picture presented to the reader. This is
+not too dissimilar from issues with mainstream media outlets covering some stories
+obsessively whilst ignoring others (read [this](https://www.vox.com/2018/5/30/17380096/fox-news-alternate-reality-charts)
+for example).
+
+In a nutshell, **transparency** is king:
+
+a. Describe the research question 
+
+b. Show how the data you have collected/observed/simulated is suitable for answering that question
+
+c. Present the results from your main analysis
+
+d. Discuss alternate analyses/results, but keep the focus on the main research question
+
+## 3. A sufficiently elaborate analysis process can always lend an air of legitimacy - *Chris Laws*, ex-McLaren boss
+
+Make sure that every step of the analysis process is justified. No one is
+an expert in every data analytic method.
+However, one should be able to assess the plausibility of an analysis procedure/model 
+within the context of the problem at hand.
+
+In a nutshell, an elaborate analysis process isn't automatically right!
